@@ -2,25 +2,17 @@
 A regression model that helps estimate taxi fares before the ride, based on data that TLC has gathered.
 
 ## Overview 
-The goal of this project was to develop a regression model that helps estimate taxi fares before the ride. 
+The goal of this project was to develop a regression model to estimate taxi fares prior to the ride. The predicted fares will serve as an input for a subsequent machine learning project. This project utilized yellow taxi trip data from New York City collected in 2017.
 
-Project utilized data gathered by New York City TLC, an agency responsible for licensing and regulating New York City's taxi cabs and for-hire vehicles to 
-
-The **multiple linear regression model** showed a success on estimating fares prior to the ride.  R^2 of 0.87 , meaning that 86.8% of the variance is described by the model.
-.
-
-## Business Understanding 
-By gaining these insights, the company can better understand the underlying issues and take proactive steps to improve employee retention and job satisfaction, and save money and time training new employees. 
+After analyzing the characteristics of 18 features and their relationships with the target variable (fare amount), six of the most influential features were selected or engineered. A **multiple linear regression model** was then developed, achieving an **R² score of 0.868**, meaning that approximately **86.8% of the variance** in fare amounts is explained by the model, demonstrating strong predictive performance.
 
 ## Data Understanding
-The dataset consisted of approximately 15,000 survey responses and 10 features. Among these, 3,008 were identified as duplicates and were dropped for future model building. The features included information on employees' working hours, tenure, salary, promotion status, satisfaction level, and last evaluation score. Approximately 16% of the data came from employees who had already left the company.
-<img alt=“Satisfaction-Tenure-Attrition” src=/images/workHrs-projectNum-left.png>
-<img alt=“WorkHours-Promotion-Attrition” src=/images/promotion-workHrs.png>
-The upper two charts show the relationship between the number of projects and monthly work hours. They reveal that employees who are assigned too many projects, resulting in an average work hour significantly higher than their peers, are more likely to leave the company.
+The dataset, sourced from NYC.gov, contained approximately 408k unique trips with 18 features, including trip duration, pickup and drop-off locationID, vendor information, toll amounts, and payment type, etc. 
 
-The lower chart highlights the relationship between monthly work hours and promotion status, showing that employees who worked long hours but did not receive a promotion almost all left the company.
+Since actual trip distance and duration are unknown before the ride begins, historical trip records were used to calculate the average distance and average duration between pickup and drop-off points.
 
-Since the satisfaction level might introduce data leakage, a new feature, 'overworked', was created to substitute and reflect the relationship between working hours and satisfaction level.
+These averages showed a strong correlation with fare amounts, as illustrated in the heatmap below.
+<img alt="Correlation Heatmap" src=/images/heatmap.png>
 
 ## Modeling and Evaluation 
 Logistic Regression, Decision Tree, and Random Forest models were developed for this project. Among them, the Random Forest model achieved the highest AUC score.
