@@ -9,7 +9,10 @@ After analyzing the characteristics of 18 features and their relationships with 
 ## Data Understanding
 The dataset, sourced from NYC.gov, contained approximately 408k unique trips with 18 features, including trip duration, pickup and drop-off locationIDs, vendor information, toll amounts, and payment type, etc. 
 
+Both the fare_amount and trip_distance (as well as duration) contained unreasonable values and outliers. To ensure the integrity of the regression model, these data points were capped at reasonable maximum and minimum values to avoid any distortion. The outliers were highlighted in the below plot with larger spots and yellow color.
+
 Since the actual trip distance and duration are unknown before the ride begins, historical trip records were leveraged to compute the average distance and average duration between pickup and drop-off points.
+<img alt="Relation between distance and fares" src=/images/Trip-Fares.png>
 
 These averages showed a strong correlation with fare amounts, as illustrated in the heatmap below.
 <img alt="Correlation Heatmap" src=/images/heatmap.png>
@@ -22,6 +25,7 @@ Trips to and from JFK Airport were excluded from model training because airport 
 There was also a potential data leakage issue involving the mean_duration and mean_distance features: when averages were computed from the entire dataset, information from the test set could inadvertently influence the model. To mitigate this, during testing, averages were recalculated using only the training data wherever possible.
 
 The model performed well on both the training and test datasets, suggesting minimal bias and no significant overfitting. On the test set, the model achieved an **R² score of 0.814**, meaning that approximately 81.4% of the variance in the fare_amount variable is explained.
+<img alt="test-results" src=/images/test-results.png>
 
 ## Conclusion
 Since the regression model was trained with standardized features, the interpretation is that for every 2.77-mile increase in distance, the predicted fare increases by approximately $6.49. Reframed in a more intuitive way, for each additional mile, the fare is expected to increase by about $2.34 (calculated as 6.49 ÷ 2.77).
