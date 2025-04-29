@@ -1,4 +1,4 @@
-# Taxi Fare Estimatior
+# Taxi Fare Estimator
 A regression model to estimate taxi fares before the ride, based on data collected by the NYC Taxi and Limousine Commission (TLC).
 
 ## Overview 
