@@ -28,7 +28,7 @@ There was also a potential data leakage issue involving the mean_duration and me
 
 The model performed well on both the training and test datasets, suggesting minimal bias and no significant overfitting. On the training set, the model achieved an **R² score of 0.839**. On the test set, the model achieved an **R² score of 0.779**.
 
-<img alt="test-results" src=/images/model_result_on_full_data.png>
+<img alt="Model Result on full data" src=/images/model_result_on_full_data.png>
 
 ## Conclusion
 Since the regression model was trained with standardized features, the interpretation is that for every 2.81mile increase in distance, the predicted fare increases by approximately $6.05. Reframed in a more intuitive way, for each additional mile, the fare is expected to increase by about $2.35 (calculated as 6.05 ÷ 2.81).
