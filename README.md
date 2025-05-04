@@ -34,4 +34,4 @@ The model performed well on both the training and test datasets, suggesting mini
 Since the regression model was trained with standardized features, the interpretation is that for every 2.81mile increase in distance, the predicted fare increases by approximately $6.05. Reframed in a more intuitive way, for each additional mile, the fare is expected to increase by about $2.35 (calculated as 6.05 ÷ 2.81).
 
 ---
-[My name is Yvette](https://yvette-yl.github.io/ "Welcome to My Profile")  |  [Proposel](/PACE_Strategy.md "")  |  [Python Notebook](/.ipynb "")  |  Presentation  | 
+[My name is Yvette](https://yvette-yl.github.io/ "Welcome to My Profile")  |  [Python Notebook](/.ipynb "")  |  Presentation  | 
